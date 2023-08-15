@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git 'https://github.com/your_git/nodejs-hello'  
+               git 'https://github.com/vinhmaiHCMUS/gittest'  
             }
         }
         
@@ -16,9 +16,9 @@ pipeline {
 
         stage('Build and Push Docker Image') {
             steps {
-                    withDockerRegistry(credentialsId: 'your-docker-hub', url: 'https://index.docker.io/v1/') {
-                      bat 'docker build -t your_docker_hub/nodejs-hello:v1 .'
-                      bat 'docker push your_docker_hub/nodejs-hello:v1'
+                    withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
+                      bat 'docker build -t vinhmai/nodejs-hello:v1 .'
+                      bat 'docker push vinhmai/nodejs-hello:v1'
                     }
             }
         }
