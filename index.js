@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 app.get('/products', (req, res) => {
     const products = [
         {id: 1, name:'Xa phong', hinhanh:"https://giaybongro.vn/upload/images/1000918800/73/7299_1621762641.jpg"},
-        {id: 2, name: 'Dau goi'}
+        {id: 2, name: 'Dau goi222'}
     ];
  
     res.json(products);
