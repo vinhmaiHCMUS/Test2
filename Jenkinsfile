@@ -24,4 +24,10 @@ pipeline {
         }
     }
 
+     post {
+        always {
+            cleanWs()
+            bat 'docker system prune -af'
+        }
+    }
 }
