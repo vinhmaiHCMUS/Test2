@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build and Push Docker Image') {
             steps {
-                    withDockerRegistry(credentialsId: 'dockerID', url: ' https://index.docker.io/v1/') {
+                    withDockerRegistry(credentialsId: 'dockerID', url: 'https://index.docker.io/v1/') {
                       bat 'docker build -t vinhmai/nodejs-hello:v2 .'
                       bat 'docker push vinhmai/nodejs-hello:v2'
                     }
