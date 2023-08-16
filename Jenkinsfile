@@ -17,14 +17,14 @@ pipeline {
         stage('Build and Push Docker Image') {
             steps {
                     withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
-                      bat 'docker build -t vinhmai/nodejs-hello:v1 .'
-                      bat 'docker push vinhmai/nodejs-hello:v1'
+                      bat 'docker build -t vinhmai/nodejs-hello:v2 .'
+                      bat 'docker push vinhmai/nodejs-hello:v2'
                     }
             }
         }
     }
 
-     post {
+    post {
         always {
             cleanWs()
             bat 'docker system prune -af'
